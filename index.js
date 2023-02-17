@@ -1,29 +1,45 @@
-const fs = require("fs");
+const fs = require('fs');
 const path = require('path');
-const inquirer = require("inquirer");
-const generateMarkdown = require("./utils/generateMarkdown");
+const inquirer = require('inquirer');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 // array of questions for user
 const questions = [
     {
         type: 'input',
         message: 'What is the title of your project?',
-        name: 'title'
+        name: 'title',
+        validate: (input) => {
+            if (!input) {
+                return 'Please enter a project name'
+            } else {
+                return true
+            };
+        }
     },
     {
         type: 'input',
         message: 'Give a description of your project',
         name: 'description',
+        validate: (input) => {
+            if (!input) {
+                return 'Please enter a description of your project'
+            } else {
+                return true
+            };
+        }
     },
     {
         type: 'input',
         message: 'Please add some installation instructions for your project',
-        name: 'installation'
+        name: 'installation',
+        default: 'N/A'
     },
     {
         type: 'input',
         message: 'Please add usage intructions and/or examples for your project',
-        name: 'usage'
+        name: 'usage',
+        default: 'N/A'
     },
     {
         type: 'list',
@@ -49,29 +65,45 @@ const questions = [
     {
         type: 'input',
         message: 'Please provide information for any contributors used for this project',
-        name: 'contributing'
+        name: 'contributing',
+        default: 'N/A'
     },
     {
         type: 'input',
         message: 'Please provide testing information for this project if required',
-        name: 'tests'
+        name: 'tests',
+        default: 'N/A'
     },
     {
         type: 'input',
         message: 'Please enter your GitHub username',
-        name: 'github'
-    },    
+        name: 'github',
+        validate: (input) => {
+            if (!input) {
+                return 'Please enter your GitHub username'
+            } else {
+                return true
+            };
+        }
+    },
     {
         type: 'input',
         message: 'Please enter your email address',
-        name: 'email'
+        name: 'email',
+        validate: (input) => {
+            if (!input) {
+                return 'Please enter your email address'
+            } else {
+                return true
+            };
+        }
     }
 ];
 
 // function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, generateMarkdown(data), (error) =>
-        (error ? console.log(error) : console.log("Success!"))
+        (error ? console.log(error) : console.log('Success!'))
     );
 }
 
@@ -79,7 +111,7 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions).then((answers) => {
         //console.log(answers);
-        writeToFile("new-readme.md", answers);
+        writeToFile('new-readme.md', answers);
     });
 }
 
