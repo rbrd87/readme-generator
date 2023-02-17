@@ -22,7 +22,7 @@ node index.js
 
 Please see the below video demonstration:
 
-![video demo]()
+
 
 ## Contributors
 

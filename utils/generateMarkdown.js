@@ -1,11 +1,11 @@
 // array of various colours that can be used for the license badged
-const licenseColours = ["red", "yellow", "hotpink", "green", "blueviolet", "orange", "blue"];
+const licenseColours = ['red', 'yellow', 'hotpink', 'green', 'blueviolet', 'orange', 'blue'];
 // randomColour picker so the same colour isn't used all the time
 const randomColour = licenseColours[Math.floor(Math.random() * licenseColours.length)];
 
 // empty array to store some license name data 
 let licenseArray = [];
-let licenseName = "";
+let licenseName = '';
 
 
 // function to generate a license badge based on the users input
@@ -21,7 +21,7 @@ const getLicenseBadge = (license) => {
     //console.log(license);
     return `![${licenseName} badge](https://img.shields.io/static/v1?label=license&message=${licenseShortName}&color=${randomColour}&style=flat)`;
   } else {
-    return "";
+    return '';
   }
 };
 
@@ -31,7 +31,7 @@ const setLicenseText = (license) => {
   if (license != 'None') {
     return `This project is licensed under the terms of ${licenseName}`;
   } else {
-    return "No license used for this project";
+    return 'No license used for this project';
   }
 };
 
