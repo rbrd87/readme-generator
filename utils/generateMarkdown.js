@@ -1,9 +1,12 @@
+const licenseColors = ["brightgreen", "green", "yellowgreen", "yellow", "orange", "red", "blue", "deepskyblue", "blueviolet", "hotpink"];
+const randomColor = licenseColors[Math.floor(Math.random() * licenseColors.length)];
+
 // function to generate a license badge based on the users input
 // if user selects 'None' no badge will be generated
 function getLicenseBadge(license) {
   if (license != 'None') {
     //console.log(license);
-    return `![${license} badge](https://img.shields.io/static/v1?label=license&message=${license}&color=green&style=flat-square)`;
+    return `![${license} badge](https://img.shields.io/static/v1?label=license&message=${license.split(' ').join('')}&color=${randomColor}&style=flat)`;
   } else {
     return "";
   }
