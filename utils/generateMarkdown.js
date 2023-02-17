@@ -70,7 +70,7 @@ For any questions or further information please get in touch via GitHub or email
 
 GitHub - [https://github.com/${data.github}](https://github.com/${data.github})
 
-Email - [${data.email}](mailto:${data.email}?subject=${data.title})
+Email - [${data.email}](mailto:${data.email})
 
 ## License 
 ${setLicenseText(data.license)}`;
