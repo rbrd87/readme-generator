@@ -39,3 +39,6 @@ For any questions or further information please get in touch via GitHub or email
 GitHub - [https://github.com/rbrd97](https://github.com/rbrd87)
 
 Email - [rochellembradley@gmail.com](mailto:rochellembradley@gmail.com?subject=readme-generator)
+
+## License
+This project is licensed under the terms of MIT License 
