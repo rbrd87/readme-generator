@@ -29,7 +29,7 @@ const getLicenseBadge = (license) => {
 // if the user selects 'None' then a message to state no license is being used is shown
 const setLicenseText = (license) => {
   if (license != 'None') {
-    return `This project is licensed under the terms of ${licenseName}`;
+    return `This project is licensed under the terms of [${licenseName}](../LICENSE)`;
   } else {
     return 'No license used for this project';
   }
