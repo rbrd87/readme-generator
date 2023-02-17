@@ -26,9 +26,25 @@ const questions = [
         name: 'usage'
     },
     {
-        type: 'input',
+        type: 'list',
         message: 'Please enter a license for your project',
-        name: 'license'
+        name: 'license',
+        choices: [
+            'GNU Affero General Public License v3.0',
+            'Apache license 2.0',
+            'BSD 2-clause "Simplified" license',
+            'BSD 3-clause "New" or "Revised" license',
+            'Boost Software License 1.0',
+            'Creative Commons Zero v1.0 Universal',
+            'Eclipse Public License 2.0',
+            'GNU General Public License v2.0',
+            'GNU General Public License v3.0',
+            'GNU Lesser General Public License v2.1',
+            'MIT',
+            'Mozilla Public License 2.0',
+            'The Unlicense',
+            'None'
+        ]
     },
     {
         type: 'input',
