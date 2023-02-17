@@ -109,7 +109,7 @@ const questions = [
 // function to write README file
 const writeToFile = (fileName, data) => {
     fs.writeFile(fileName, generateMarkdown(data), (error) =>
-        (error ? console.log(error) : console.log(`${data.title}-README.md file has been written`))
+        (error ? console.log(error) : console.log(`${data.title.toLowerCase().split(' ').join('-')}-README.md file has been written. Go to the 'readme-files' folder to view.`))
     );
 }
 
@@ -119,7 +119,7 @@ const init = () => {
         //console.log(answers);
 
         // using path.join I can specify that the readme is saved in the correct folder
-        writeToFile(path.join ('./readme-files/', `${answers.title}-README.md`), answers);
+        writeToFile(path.join ('./readme-files/', `${answers.title.toLowerCase().split(' ').join('-')}-README.md`), answers);
     });
 }
 
