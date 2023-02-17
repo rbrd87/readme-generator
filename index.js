@@ -56,6 +56,16 @@ const questions = [
         message: 'Please provide testing information for this project if required',
         name: 'tests'
     },
+    {
+        type: 'input',
+        message: 'Please enter your GitHub username',
+        name: 'github'
+    },    
+    {
+        type: 'input',
+        message: 'Please enter your email address',
+        name: 'email'
+    }
 ];
 
 // function to write README file

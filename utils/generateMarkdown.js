@@ -2,7 +2,7 @@
 // if user selects 'None' no badge will be generated
 function getLicenseBadge(license) {
   if (license != "None") {
-    console.log(license);
+    //console.log(license);
     return `![${license} badge](https://img.shields.io/static/v1?label=license&message=${license}&color=green&style=flat-square)`;
   } else {
     return "";
@@ -17,7 +17,7 @@ function setLicenseText(license) {
   } else {
     return "No license used for this project";
   }
-}
+};
 
 // function to generate markdown for README
 function generateMarkdown(data) {
@@ -50,10 +50,14 @@ ${data.contributing}
 ${data.tests}
   
 ## Questions
+For any questions or further information please get in touch via GitHub or email
+
+GitHub - [https://github.com/${data.github}](https://github.com/${data.github})
+
+Email - [${data.email}](mailto:${data.email}?subject=${data.title})
 
 ## License 
-${setLicenseText(data.license)}
-`;
-}
+${setLicenseText(data.license)}`;
+};
 
 module.exports = generateMarkdown;
