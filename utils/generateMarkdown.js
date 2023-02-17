@@ -1,6 +1,13 @@
+function getLicenseBadge(license) {
+  //console.log(license)
+  return `![${license} badge](https://img.shields.io/static/v1?label=license&message=${license}&color=green&style=flat-square)`
+}
+
 // function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
+
+${getLicenseBadge(data.license)}
 
 ## Table of Contents
 - [Description](#description)
@@ -20,9 +27,6 @@ ${data.installation}
 ## Usage 
 ${data.usage}
   
-## License 
-${data.license}
-  
 ## Contributing
 ${data.contributing}
   
@@ -31,6 +35,8 @@ ${data.tests}
   
 ## Questions
 
+## License 
+${data.license}
 `;
 }
 
