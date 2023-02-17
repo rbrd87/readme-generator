@@ -9,6 +9,8 @@ function getLicenseBadge(license) {
   }
 };
 
+// function to populate the license section based on the users input
+// if the user selects 'None' then a message to state no license is being used is shown
 function setLicenseText(license) {
   if (license != "None") {
     return `This project is covered by ${license}`;
@@ -30,7 +32,7 @@ ${getLicenseBadge(data.license)}
 - [Contributing](#contributing)
 - [Tests](#tests)
 - [Questions](#questions)
-- [${license}](#${license})
+- [License](#license)
   
 ## Description
 ${data.description}
@@ -50,7 +52,6 @@ ${data.tests}
 ## Questions
 
 ## License 
-${data.license}
 ${setLicenseText(data.license)}
 `;
 }
